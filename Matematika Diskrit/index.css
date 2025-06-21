@@ -1,0 +1,137 @@
+*,
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#pembungkusNavbar {
+    background-color: white;
+}
+
+#navbar {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pembungkusNama {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+    list-style-type: none;
+}
+
+.logo {
+    width: 50px;
+
+}
+
+.pembungkusMenu {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+
+.a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+#tentangKami{
+    padding-right: 10px;
+}
+
+.a:hover {
+    color: rgb(0, 255, 8);
+}
+
+.pembungkusWelcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    background-color: #111;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.welcomeKonten {
+    max-width: 600px;
+}
+
+
+.pembungkusWelcome h1 {
+    font-size: 45px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.pembungkusWelcome h1 span {
+    color: #00ff88;
+}
+
+.pembungkusWelcome p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.mulai-button {
+    padding: 12px 25px;
+    background-color: #00ff88;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.mulai-button:hover {
+    background-color: #00cc6a;
+}
+
+.pelajari-button {
+    padding: 12px 25px;
+    margin-left: 10px;
+    background-color: #00ff88;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.pelajari-button:hover {
+    background-color: #00cc6a;
+}
+
+.pembungkusWelcome img {
+    width: 393px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .pembungkusWelcome {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .gambarWelcome {
+        margin-top: 30px;
+    }
+
+    .pembungkusWelcome h1 {
+        font-size: 32px;
+    }
+}

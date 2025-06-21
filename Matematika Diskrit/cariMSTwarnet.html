@@ -1,0 +1,62 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulasi Algoritma Kruskal</title>
+  <link rel="stylesheet" href="CMW.css">
+</head>
+<body>
+  <div id="navbar">
+    <div class="nav-left">
+      <img src="logoKruskalofix.png" alt="Logo" class="logo" />
+      <div>Kruskalofix</div>
+    </div>
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="#">Fitur</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Optimalisasi Penggunaan Kabel<br>Menggunakan Algoritma Kruskal</h1>
+    <label>Simpul Awal:
+      <input type="text" id="from" maxlength="1" placeholder="A">
+    </label>
+    <label>Simpul Akhir:
+      <input type="text" id="to" maxlength="1" placeholder="B">
+    </label>
+    <label>Panjang Kabel (meter):
+      <input type="number" id="length" placeholder="10">
+    </label>
+    <label>Harga Kabel per Meter:
+      <input type="number" id="pricePerMeter" placeholder="1000">
+    </label>
+    <button onclick="tambahSisi()">Tambah Sisi</button>
+    <button onclick="hitungMST()">Hitung MST</button>
+
+    <div class="edges">
+      <h3>Daftar Sisi:</h3>
+      <ul id="daftarSisi"></ul>
+    </div>
+
+    <div class="hasil">
+      <h3>Hasil MST:</h3>
+      <table id="hasilTabel">
+        <thead>
+          <tr><th>Dari</th><th>Ke</th><th>Bobot</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="totalBobot"></p>
+      <p id="totalBiaya"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
