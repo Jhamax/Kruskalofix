@@ -1,0 +1,82 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulasi Algoritma Kruskal</title>
+  <link rel="icon" href="../foto/logoKruskalofix.png" type="image/png">
+  <link rel="stylesheet" href="../css/CMW.css">
+</head>
+
+<body>
+
+  <div id="pembungkusNavbar">
+    <div id="navbar">
+
+      <!-- Logo + Nama -->
+
+      <li class="pembungkusNama">
+        <a href="../html/index.html" class="aLogo">
+          <img src="../foto/logoKruskalofix.png" alt="Logo" class="logo" />
+        </a>
+        <div class="garis"></div>
+        <a href="../html/index.html" class="kruskalofix">Kruskalofix</a>
+      </li>
+
+      <!-- Menu Navigasi -->
+
+      <ul class="pembungkusMenu">
+        <li><a href="../html/index.html" class="a">Beranda</a></li>
+        <li><a href="#" class="a">Fitur</a></li>
+        <li><a href="#" class="a" id="tentangKami">Tentang Kami</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Optimalisasi Penggunaan Kabel<br>Menggunakan Algoritma Kruskal</h1>
+    <label>Simpul Awal:
+      <input type="text" id="from" maxlength="1" placeholder="A">
+    </label>
+    <label>Simpul Akhir:
+      <input type="text" id="to" maxlength="1" placeholder="B">
+    </label>
+    <label>Panjang Kabel (meter):
+      <input type="text" id="length" placeholder="10" pattern="\d*" inputmode="numeric">
+    </label>
+    <label>Harga Kabel per Meter:
+      <input type="text" id="pricePerMeter" placeholder="10" pattern="\d*" inputmode="numeric">
+    </label>
+    <button onclick="tambahSisi()">Tambah Sisi</button>
+    <button onclick="hitungMST()">Hitung MST</button>
+    <a href="../html/cariMSTwarnet.html" class="ulangi"> Ulangi </a>
+
+    <div class="edges">
+      <h3>Daftar Sisi:</h3>
+      <ul id="daftarSisi"></ul>
+    </div>
+
+    <div class="hasil">
+      <h3>Hasil MST:</h3>
+      <table id="hasilTabel">
+        <thead>
+          <tr>
+            <th>Dari</th>
+            <th>Ke</th>
+            <th>Bobot (meter)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="totalBobot"></p>
+      <p id="totalBiaya"></p>
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
