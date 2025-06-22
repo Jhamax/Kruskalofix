@@ -11,6 +11,7 @@ body {
     background-color: #111;
     color: white;
 }
+
 /* SCROOL BAR */
 
 ::-webkit-scrollbar {
@@ -214,6 +215,7 @@ tbody tr {
 
 .ulangi {
     padding: 12px 25px;
+    margin-top: 10px;
     background-color: #00ff88;
     color: #000;
     text-decoration: none;
@@ -222,11 +224,44 @@ tbody tr {
     transition: background-color 0.3s ease;
 }
 
-.ulangi:hover {
+.tutorial {
+    padding: 12px 25px;
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: #00ff88;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.ulangi:hover,
+.tutorial:hover {
     background-color: #00FF08;
 }
 
 #daftarSisi {
     list-style-type: circle;
     padding-left: 17px;
+}
+
+.garis2 {
+    width: 1px;
+    height: 30px;
+    background-color: #00FF08;
+    margin: 0 10px;
+    opacity: 1;
+    margin-top: 10px;
+    box-shadow: 0 0 8px #00FF08, 0 0 12px #00FF08;
+
+}
+
+.pembungkusTombol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }

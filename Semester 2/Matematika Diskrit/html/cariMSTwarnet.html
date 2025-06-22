@@ -45,14 +45,19 @@
       <input type="text" id="to" maxlength="1" placeholder="B">
     </label>
     <label>Panjang Kabel (meter):
-      <input type="text" id="length" placeholder="10"  pattern="\d*" inputmode="numeric">
+      <input type="text" id="length" placeholder="10" pattern="\d*" inputmode="numeric">
     </label>
     <label>Harga Kabel per Meter:
       <input type="text" id="pricePerMeter" placeholder="10" pattern="\d*" inputmode="numeric">
     </label>
-    <button onclick="tambahSisi()">Tambah Sisi</button>
-    <button onclick="hitungMST()">Hitung MST</button>
-    <a href="../html/cariMSTwarnet.html" class="ulangi"> Ulangi </a>
+    <div class="pembungkusTombol">
+      <button onclick="tambahSisi()">Tambah Sisi</button>
+      <button onclick="hitungMST()">Hitung MST</button>
+      <a href="../html/cariMSTwarnet.html" class="ulangi"> Ulangi </a>
+      <div class="garis2"></div>
+      <a href="#" class="tutorial"> Tutorial Simulasi</a>
+    </div>
+
 
     <div class="edges">
       <h3>Daftar Sisi:</h3>
