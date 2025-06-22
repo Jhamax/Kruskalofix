@@ -101,15 +101,20 @@
 
         <section>
             <h2>Algoritma Kruskal</h2>
-            <p>Algoritma Kruskal adalah salah satu algoritma untuk mencari MST. Caranya:</p>
+            <p>Algoritma Kruskal adalah algoritma greedy (rakus) yang digunakan untuk mencari Minimum Spanning Tree
+                (MST) dari sebuah graf berbobot dan tidak berarah. Berikut langkah-langkah algoritma Kruskal: </p>
             <ol>
-                <li>Urutkan semua sisi berdasarkan bobot terkecil ke terbesar.</li>
-                <li>Pilih sisi dengan bobot terkecil yang tidak membentuk siklus.</li>
-                <li>Ulangi hingga semua simpul terhubung.</li>
+                <li>Urutkan semua sisi (edge) berdasarkan bobotnya dari kecil ke besar.</li>
+                <li>Ambil sisi dengan bobot terkecil dan tambahkan ke MST jika tidak membentuk siklus.</li>
+                <li>Ulangi langkah 2 sampai semua simpul terhubung atau MST terbentuk (jumlah sisi = jumlah simpul - 1).
+                </li>
             </ol>
-            <p>Untuk menghindari siklus, digunakan struktur <strong>Disjoint Set (Union-Find)</strong>.</p>
+            <p>Saat algoritma Kruskal memilih sisi dengan bobot terkecil, kita harus berhati-hati agar tidak membentuk
+                siklus. <strong>Siklus</strong> adalah kondisi di mana kamu bisa kembali ke titik awal hanya dengan mengikuti sisi-sisi
+                yang sudah dipilih ini tidak boleh terjadi dalam pohon merentang minimum (MST).</p>
         </section>
 
+        <a href="../html/materi_lengkap.html" class="button" target="_blank">Baca Materi Lengkap</a>
         <a href="../html/cariMSTwarnet.html" class="button">Lanjut ke Simulasi</a>
     </div>
 

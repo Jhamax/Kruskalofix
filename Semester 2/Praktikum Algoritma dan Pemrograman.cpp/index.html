@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kruskal MST Interaktif</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+    }
+    input, button, textarea {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+    #result {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Perhitungan MST dengan Kruskal</h1>
+  <label for="nodes">Jumlah Simpul:</label>
+  <input type="number" id="nodes" min="1" placeholder="Misal: 4">
+
+  <label for="edges">Masukkan Sisi (format: simpul1 simpul2 bobot):</label>
+  <textarea id="edges" placeholder="Contoh:\n1 2 4\n1 3 2\n2 3 3"></textarea>
+
+  <button onclick="hitungMST()">Hitung MST</button>
+
+  <div id="result"></div>
+
+  <script>
+    class DisjointSet {
+      constructor(n) {
+        this.parent = Array.from({length: n}, (_, i) => i);
+        this.rank = Array(n).fill(0);
+      }
+
+      find(u) {
+        if (this.parent[u] !== u) {
+          this.parent[u] = this.find(this.parent[u]);
+        }
+        return this.parent[u];
+      }
+
+      union(u, v) {
+        let rootU = this.find(u);
+        let rootV = this.find(v);
+
+        if (rootU === rootV) return false;
+
+        if (this.rank[rootU] < this.rank[rootV]) {
+          this.parent[rootU] = rootV;
+        } else if (this.rank[rootU] > this.rank[rootV]) {
+          this.parent[rootV] = rootU;
+        } else {
+          this.parent[rootV] = rootU;
+          this.rank[rootU]++;
+        }
+        return true;
+      }
+    }
+
+    function hitungMST() {
+      const nodeCount = parseInt(document.getElementById('nodes').value);
+      const edgeText = document.getElementById('edges').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      if (isNaN(nodeCount) || nodeCount < 1 || edgeText === '') {
+        resultDiv.innerHTML = '<p style="color:red">Mohon isi semua input dengan benar.</p>';
+        return;
+      }
+
+      const edgeLines = edgeText.split('\n');
+      const edges = [];
+
+      try {
+        for (let line of edgeLines) {
+          const [a, b, w] = line.trim().split(/\s+/).map(Number);
+          if ([a, b, w].some(x => isNaN(x)) || a < 1 || b < 1 || a > nodeCount || b > nodeCount) {
+            throw new Error("Format salah pada baris: " + line);
+          }
+          edges.push({ weight: w, u: a - 1, v: b - 1 });
+        }
+      } catch (e) {
+        resultDiv.innerHTML = '<p style="color:red">' + e.message + '</p>';
+        return;
+      }
+
+      edges.sort((a, b) => a.weight - b.weight);
+      const ds = new DisjointSet(nodeCount);
+      let mst = [];
+      let total = 0;
+
+      for (let edge of edges) {
+        if (ds.union(edge.u, edge.v)) {
+          mst.push(edge);
+          total += edge.weight;
+        }
+      }
+
+      let output = '<h3>Hasil MST:</h3><ul>';
+      mst.forEach(edge => {
+        output += `<li>${edge.u + 1} -- ${edge.v + 1} == ${edge.weight}</li>`;
+      });
+      output += `</ul><strong>Total bobot MST: ${total}</strong>`;
+
+      resultDiv.innerHTML = output;
+    }
+  </script>
+</body>
+</html>
