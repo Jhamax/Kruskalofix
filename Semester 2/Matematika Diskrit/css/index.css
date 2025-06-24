@@ -363,6 +363,7 @@ footer {
 
 .dropdown-content a:hover {
     background-color: #00ff88;
+    font-weight: bold;
     color: black;
 }
 
