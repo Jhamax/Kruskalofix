@@ -26,11 +26,19 @@
 
             <!-- Menu Navigasi -->
 
-            <ul class="pembungkusMenu">
-                <li><a href="../html/index.html" class="a">Beranda</a></li>
-                <li><a href="#" class="a">Fitur</a></li>
-                <li><a href="#" class="a" id="tentangKami">Tentang Kami</a></li>
-            </ul>
+      <ul class="pembungkusMenu">
+        <li><a href="../html/index.html" class="a">Beranda</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="a">Fitur</a>
+          <ul class="dropdown-content">
+            <li><a href="../html/cariMSTwarnet.html">Simulasi Kruskal</a></li>
+            <li><a href="../html/materi.html">Pelajari Materi</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../html/tentangKami.html" class="a" id="tentangKami">Tentang Kami</a></li>
+      </ul>
 
         </div>
     </div>
@@ -117,7 +125,57 @@
         <a href="../html/materi_lengkap.html" class="button" target="_blank">Baca Materi Lengkap</a>
         <a href="../html/cariMSTwarnet.html" class="button">Lanjut ke Simulasi</a>
     </div>
+   <!-- Footer -->
+  <footer id="contact">
+    <div class="footer_container">
+      <!-- Kolom Logo + Deskripsi -->
+      <div class="footer_col logo_col">
+        <a href="../html/index.html" class="footer_logo_wrap">
+          <img src="../foto/logoKruskalofix.png" alt="Logo" class="footer_logo" />
+          <span class="footer_nama">Kruskalofix</span>
+        </a>
+        <p class="footer_desc">
+          Mempelajari dan menyimulasikan algoritma Kruskal untuk jaringan komputer yang optimal.
+        </p>
+      </div>
 
-</body>
+      <!-- Kolom Tautan -->
+      <div class="footer_col">
+        <h4>Kruskal</h4>
+        <ul class="footer_links">
+          <li><a href="../html/index.html">Beranda</a></li>
+          <li><a href="../html/cariMSTwarnet.html">Fitur</a></li>
+          <li><a href="../html/materi.html">Tentang Kruskal</a></li>
+        </ul>
+      </div>
 
+      <!-- Kolom Materi -->
+      <div class="footer_col">
+        <h4>Pelajari Lebih Lanjut</h4>
+        <ul class="footer_links">
+          <li><a href="#">Graf</a></li>
+          <li><a href="#">Pohon</a></li>
+          <li><a href="#">Algoritma Kruskal</a></li>
+          <li><a href="#">Minimum Spanning Tree</a></li>
+        </ul>
+      </div>
+
+      <!-- Kolom Kontak -->
+      <div class="footer_col kanan">
+        <h4>Kontak Kami</h4>
+        <ul class="footer_kontak">
+          <li><a href="#">+62 898-7096-566</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Youtube</a></li>
+          <li><a href="#">kruskal@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bar bawah -->
+    <div class="footer_bar">Kruskal.com</div>
+  </footer>
+  <!-- Footer -->
+
+	</body>
 </html>

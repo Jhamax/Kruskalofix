@@ -21,7 +21,7 @@ body {
 ::-webkit-scrollbar-track {
     background: #111;
     /* warna latar belakang scrollbar */
-    border-radius: 0;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -112,122 +112,7 @@ body {
     color: rgb(0, 255, 8);
 }
 
-/* CONTAINER */
-.container {
-    max-width: 700px;
-    margin: 40px auto;
-    background-color: #1e1e1e;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #00ff88;
-}
 
-h1 {
-    text-align: center;
-    color: #00FF08;
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-label {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-input,
-button {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-}
-
-button {
-    padding: 12px 25px;
-    margin-right: 10px;
-    margin-top: 10px;
-    background-color: #00ff88;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    cursor: pointer;
-    background-color: #00FF08;
-}
-
-input {
-    width: 60%;
-}
-
-input:focus {
-    outline: 2px solid #00ff88;
-}
-
-.edges,
-.hasil {
-    margin-top: 20px;
-}
-
-h3 {
-    color: white;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-th,
-td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid black;
-}
-
-th {
-    background-color: #00FF08;
-    color: black;
-}
-
-tbody tr {
-    background-color: white;
-    color: black;
-}
-
-#totalBobot,
-#totalBiaya {
-    font-weight: bold;
-    text-align: left;
-    margin-top: 10px;
-    color: white;
-}
-
-.ulangi {
-    padding: 12px 25px;
-    margin-top: 10px;
-    background-color: #00ff88;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-.ulangi:hover,
-.tutorial:hover {
-    background-color: #00FF08;
-}
-
-#daftarSisi {
-    list-style-type: circle;
-    padding-left: 17px;
-}
 footer {
     background-color: black;
     padding-top: 1rem;
@@ -295,7 +180,7 @@ footer {
     margin-bottom: 1rem;
     margin-left: 100px;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #00FF08;
     text-align: left;
 }
@@ -312,7 +197,7 @@ footer {
     margin-bottom: 1rem;
     margin-left: 130px;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #00FF08;
     text-align: left;
 }
