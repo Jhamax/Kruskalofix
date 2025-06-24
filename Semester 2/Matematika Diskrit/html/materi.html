@@ -70,7 +70,7 @@
           <img src="../foto/gambarGBerarah.png" alt="Graf Berarah" class="gambarContoh" />
         </div>
 
-        <h2>Graf Berbobot</h2>
+        <h2 id="GBerbobot">Graf Berbobot</h2>
         <p>
           Graf berbobot adalah graf yang sisinya memiliki nilai. Contoh:
         </p>
@@ -133,23 +133,31 @@
         menemukan Minimum Spanning Tree (MST) dari sebuah graf berbobot. Prinsip kerja Kruskal sangat sederhana: selalu
         pilih sisi dengan bobot terkecil yang belum membentuk siklus, sampai semua simpul terhubung. </p>
       <p>Berikut langkah-langkah utama dari algoritma Kruskal:</p>
+      <p>Lihat contoh <a href="#GBerbobot" class="pGB">Graf Berbobot</a> di mana kita akan mencari MST dari graf
+        tersebut.</p>
       <ol>
         <li>Urutkan semua sisi (edge) berdasarkan bobotnya dari kecil ke besar.</li>
+        <ol class="olLangkah1">
+          <li>BD dengan bobot 3</li>
+          <li>AB dengan bobot 5</li>
+          <li>AC dengan bobot 6</li>
+          <li>CD dengan bobot 8</li>
+        </ol>
         <li>Ambil sisi dengan bobot terkecil dan tambahkan ke MST jika tidak membentuk siklus.</li>
-        <li>Periksa apakah penambahan sisi tersebut akan membentuk siklus. Jika tidak membentuk siklus, tambahkan sisi
-          ke MST. Jika membentuk siklus, abaikan sisi tersebut.</li>
-        <li>Ulangi langkah 2 sampai semua simpul terhubung atau MST terbentuk (jumlah sisi = jumlah simpul - 1).
-        </li>
+        <ol class="olLangkah1">
+          <li>BD dengan bobot 3</li>
+          <li>AB dengan bobot 5</li>
+          <li>AC dengan bobot 6</li>
+        </ol>
+        <li>Setelah semua sisi diambil, maka MST sudah terbentuk, lihat graf di bawah.</li>
+        <p> </p>
+        <img src="../foto/gambarGlangkahKruskal.png" class="gambarContoh"/>
+        <p>Setelah itu hitung semua bobot (6 + 5 + 3 = 14). Maka diperoleh total bobot MST-nya sebesar 14.</p>
       </ol>
-      <p>Hasil akhirnya adalah sebuah pohon merentang minimum yang menghubungkan semua simpul dengan total bobot sisi
-        sekecil mungkin.</p>
       <p>Saat algoritma Kruskal memilih sisi dengan bobot terkecil, kita harus berhati-hati agar tidak membentuk
         siklus. <strong>Siklus</strong> adalah kondisi di mana kamu bisa kembali ke titik awal hanya dengan mengikuti
         sisi-sisi
         yang sudah dipilih ini tidak boleh terjadi dalam pohon merentang minimum (MST).</p>
-      <p>Algoritma Kruskal menarik karena sederhana dan mudah dipahami secara visual. Algoritma ini sangat cocok
-        digunakan untuk graf jarang (sparse graph), di mana jumlah sisi lebih sedikit dibanding jumlah simpul. Dengan
-        bantuan struktur data seperti Union-Find (Disjoint Set), algoritma ini dapat berjalan sangat efisien.</p>
       <p>Sebagai contoh sederhana, bayangkan kamu ingin menghubungkan beberapa komputer dalam jaringan, tetapi ingin
         memakai kabel sesedikit dan sehemat mungkin. Kruskal akan memilih kabel-kabel terpendek dulu, dan memastikan
         semua komputer terhubung tanpa ada kabel yang dipasang dua kali ke jalur yang sama.</p>

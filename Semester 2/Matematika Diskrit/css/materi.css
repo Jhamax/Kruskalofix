@@ -333,3 +333,12 @@ footer {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.pGB {
+    color: #00FF08;
+    text-decoration: none;
+}
+
+.olLangkah1{
+    list-style-type: disc;
+}
