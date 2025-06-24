@@ -346,7 +346,6 @@ footer {
     top: 100%;
     left: 0;
     border-radius: 8px;
-    padding: 10px 0;
 }
 
 .dropdown-content li {
@@ -370,4 +369,8 @@ footer {
 /* Tampilkan dropdown saat hover */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.footerAnakFitur{
+    list-style-type: disc;
 }
