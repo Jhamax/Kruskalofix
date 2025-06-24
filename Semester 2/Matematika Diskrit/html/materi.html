@@ -82,9 +82,15 @@
 
     <section id="pohon">
       <h2>Apa itu Pohon?</h2>
-      <p>Pohon adalah graf tak berarah yang terhubung dan tidak mengandung siklus. Jika ada <em>n</em> simpul,
-        maka jumlah sisinya adalah <em>n - 1</em>. Semua pohon adalah graf, tetapi tidak semua graf adalah
-        pohon. Berikut contoh pohon:</p>
+      <p>Pohon adalah graf tak berarah yang terhubung dan tidak mengandung siklus. Artinya, dalam sebuah pohon, semua
+        simpul saling terhubung tanpa adanya jalur melingkar. Setiap pasangan simpul hanya terhubung oleh satu jalur
+        unik.</p>
+      <p>Jika sebuah pohon memiliki n simpul, maka jumlah sisinya selalu tepat <strong>n - 1</strong>. Ini karena setiap
+        penambahan sisi
+        baru pada pohon akan menciptakan siklus, yang bertentangan dengan definisi pohon.</p>
+      <p>Semua pohon merupakan bagian dari graf, karena pohon adalah salah satu jenis graf khusus. Namun, tidak semua
+        graf merupakan pohon, karena graf umum bisa saja mengandung siklus atau tidak terhubung sepenuhnya.</p>
+      <p>Berikut contoh pohon: </p>
       <div id="divGambarPohon">
         <img src="../foto/gambarPohon.png" alt="Graf Berarah" class="gambarContoh" />
       </div>
@@ -92,10 +98,22 @@
 
     <section id="mst">
       <h2>Apa itu Minimum Spanning Tree (MST)?</h2>
-      <p>MST adalah sub-graf pohon dari graf berbobot yang mencakup semua simpul dengan total bobot minimum dan
-        tidak membentuk siklus. MST digunakan untuk optimalisasi jaringan, seperti penghematan biaya kabel atau
-        pipa.</p>
-      <p>Contoh graf sebelum ditentukan MST-nya dengan total bobot 46:</p>
+      <p>Minimum Spanning Tree (MST) adalah pohon merentang minimum dari sebuah graf berbobot. Artinya, MST
+        menghubungkan semua simpul dalam graf dengan total bobot sisi serendah mungkin, tanpa membentuk siklus.</p>
+      <p>Dalam sebuah graf berbobot, bisa saja ada banyak cara menghubungkan semua simpul. Namun, MST mencari kombinasi
+        sisi-sisi dengan bobot total terkecil yang tetap membuat semua simpul terhubung.</p>
+      <p><strong>Ciri-ciri MST: </strong></p>
+      <ol>
+        <li>Menghubungkan semua simpul dalam graf.</li>
+        <li>Tidak mengandung siklus.</li>
+        <li>Memiliki total bobot sisi yang paling kecil dibandingkan semua pohon merentang lainnya.
+        </li>
+      </ol>
+      <p>Beberapa algoritma yang umum digunakan untuk menemukan MST adalah algoritma Kruskal dan algoritma Prim. Di
+        <strong> Kruskalofix</strong>, kamu dapat melihat bagaimana algoritma Kruskal bekerja secara visual untuk
+        membangun MST.
+      </p>
+      <p>Berikut contoh graf sebelum ditentukan MST-nya dengan total bobot 46:</p>
       <div id="divGambarContohSebelumMST">
         <img src="../foto/gambarContohSebelumMST.png" alt="Graf Berarah" class="gambarContohMST" />
       </div>
@@ -111,20 +129,35 @@
     <section id="kruskal">
       <h2>Algoritma Kruskal</h2>
       <p>Algoritma Kruskal adalah algoritma greedy (rakus) yang digunakan untuk mencari Minimum Spanning Tree
-        (MST) dari sebuah graf berbobot dan tidak berarah. Berikut langkah-langkah algoritma Kruskal: </p>
+        (MST) dari sebuah graf berbobot dan tidak berarah. Algoritma Kruskal adalah salah satu metode untuk
+        menemukan Minimum Spanning Tree (MST) dari sebuah graf berbobot. Prinsip kerja Kruskal sangat sederhana: selalu
+        pilih sisi dengan bobot terkecil yang belum membentuk siklus, sampai semua simpul terhubung. </p>
+      <p>Berikut langkah-langkah utama dari algoritma Kruskal:</p>
       <ol>
         <li>Urutkan semua sisi (edge) berdasarkan bobotnya dari kecil ke besar.</li>
         <li>Ambil sisi dengan bobot terkecil dan tambahkan ke MST jika tidak membentuk siklus.</li>
+        <li>Periksa apakah penambahan sisi tersebut akan membentuk siklus. Jika tidak membentuk siklus, tambahkan sisi
+          ke MST. Jika membentuk siklus, abaikan sisi tersebut.</li>
         <li>Ulangi langkah 2 sampai semua simpul terhubung atau MST terbentuk (jumlah sisi = jumlah simpul - 1).
         </li>
       </ol>
+      <p>Hasil akhirnya adalah sebuah pohon merentang minimum yang menghubungkan semua simpul dengan total bobot sisi
+        sekecil mungkin.</p>
       <p>Saat algoritma Kruskal memilih sisi dengan bobot terkecil, kita harus berhati-hati agar tidak membentuk
         siklus. <strong>Siklus</strong> adalah kondisi di mana kamu bisa kembali ke titik awal hanya dengan mengikuti
         sisi-sisi
         yang sudah dipilih ini tidak boleh terjadi dalam pohon merentang minimum (MST).</p>
+      <p>Algoritma Kruskal menarik karena sederhana dan mudah dipahami secara visual. Algoritma ini sangat cocok
+        digunakan untuk graf jarang (sparse graph), di mana jumlah sisi lebih sedikit dibanding jumlah simpul. Dengan
+        bantuan struktur data seperti Union-Find (Disjoint Set), algoritma ini dapat berjalan sangat efisien.</p>
+      <p>Sebagai contoh sederhana, bayangkan kamu ingin menghubungkan beberapa komputer dalam jaringan, tetapi ingin
+        memakai kabel sesedikit dan sehemat mungkin. Kruskal akan memilih kabel-kabel terpendek dulu, dan memastikan
+        semua komputer terhubung tanpa ada kabel yang dipasang dua kali ke jalur yang sama.</p>
+      <p>Di Kruskalofix, kamu bisa melihat proses ini divisualisasikan secara langsung. Setiap sisi yang dipilih akan
+        ditandai, dan kamu bisa mengikuti langkah demi langkah bagaimana pohon merentang minimum terbentuk.</p>
     </section>
 
-    <a href="../html/materi_lengkap.html" class="button" target="_blank">Baca Materi Lengkap</a>
+    <a href="../html/jurnal.html" class="button" target="_blank">Lihat Jurnal Kami</a>
     <a href="../html/cariMSTwarnet.html" class="button">Lanjut ke Simulasi</a>
   </div>
   <!-- Footer -->
