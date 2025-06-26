@@ -1,4 +1,4 @@
-/* style.css */
+/* Reset dasar */
 *,
 html {
     padding: 0;
@@ -10,48 +10,43 @@ body {
     margin: 0;
     background-color: #111;
     color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* SCROOL BAR */
-
+/* SCROLL BAR */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-track {
     background: #111;
-    /* warna latar belakang scrollbar */
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #00ff88;
-    /* warna neon hijau */
     border-radius: 10px;
     box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
-    /* efek glow */
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #00ffaa;
     box-shadow: 0 0 15px #00ffaa, 0 0 25px #00ffaa;
-    /* glow lebih terang saat hover */
 }
 
-/* Untuk Firefox */
 body {
     scrollbar-width: thin;
     scrollbar-color: #00ff88 #111;
 }
 
-/* SCROOL BAR END */
-
+/* Navbar */
 #pembungkusNavbar {
     background-color: white;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #navbar {
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     color: white;
     padding: 15px;
     display: flex;
@@ -60,12 +55,11 @@ body {
 }
 
 .pembungkusNama {
-    gap: 10px;
     display: flex;
+    gap: 10px;
     align-items: center;
-    font-size: 25px;
     list-style-type: none;
-    padding: 0;
+    font-size: 25px;
 }
 
 .garis {
@@ -112,16 +106,125 @@ body {
     color: rgb(0, 255, 8);
 }
 
+/* Tentang Kami */
+header h1 {
+    text-align: center;
+    color: #00ff66;
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
 
+.asal-mula {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.asal-mula p {
+    font-size: 1.1rem;
+    color: #eee;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.about_us {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.about_us h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #00ff66;
+    margin-bottom: 3rem;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+figure img {
+    width: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+}
+
+figcaption {
+    font-size: 0.95rem;
+    color: #ccc;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+figcaption a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.foto-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    gap: 2rem;
+}
+
+.foto-1 figure {
+    flex: 1;
+    text-align: center;
+}
+
+.foto-1 img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.foto-1 p {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #eee;
+    text-align: justify;
+}
+
+.foto-1:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+
+
+/* Footer */
 footer {
     background-color: black;
     padding-top: 1rem;
     color: white;
 }
 
-.footer_col.logo_col {
-    flex: 1.5;
-    max-width: 300px;
+.footer_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.footer_col {
+    flex: 1;
+    min-width: 200px;
+    max-width: 33%;
+}
+
+.logo_col {
+    margin-left: -100px;
 }
 
 .footer_logo_wrap {
@@ -134,7 +237,6 @@ footer {
 
 .footer_logo {
     width: 40px;
-    height: auto;
 }
 
 .footer_nama {
@@ -144,37 +246,10 @@ footer {
 }
 
 .footer_desc {
-    color: white;
     font-size: 0.9rem;
     margin-top: 0.5rem;
     line-height: 1.5;
 }
-
-.footer_container {
-    display: flex;
-    justify-content: center;
-    /* <-- sebelumnya space-between */
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    flex-wrap: wrap;
-    gap: 3rem;
-    /* beri jarak antar kolom, bukan sisi luar */
-}
-
-
-/* Semua Kolom */
-.footer_col {
-    flex: 1;
-    min-width: 200px;
-    max-width: 33%;
-}
-
-.logo_col {
-    margin-left: -100px;
-}
-
 
 .footer_col h4 {
     margin-bottom: 1rem;
@@ -182,65 +257,56 @@ footer {
     font-size: 1.2rem;
     font-weight: 600;
     color: #00FF08;
-    text-align: left;
+}
+
+.footer_col.kanan h4 {
+    margin-left: 130px;
+}
+
+.footer_links,
+.footer_kontak {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
 }
 
 .footer_links {
-    display: flex;
     margin-left: 100px;
-    flex-direction: column;
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
 }
-.footer_col.kanan h4 {
-    margin-bottom: 1rem;
-    margin-left: 130px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #00FF08;
-    text-align: left;
-}
-.footer_sosial,
+
 .footer_kontak {
-    display: flex;
     margin-left: 130px;
-    flex-direction: column;
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
 }
 
 .footer_links a,
-.footer_sosial a,
 .footer_kontak a {
     color: white;
     text-decoration: none;
 }
 
 .footer_links a:hover,
-.footer_sosial a:hover,
 .footer_kontak a:hover {
     color: #00FF08;
 }
 
-/* Kolom tengah (opsional, biar teks rata tengah) */
-.footer_col.tengah {
-    text-align: left;
-}
-
-.footer_col.kanan {
-    text-align: left;
-}
-
-/* Footer bawah */
+/* Footer Bawah */
 .footer_bar {
+    background-color: black;
+    color: white;
     text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #00FF08;
-    border-top: 1px solid #00FF08;
-    margin-top: 1rem;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer_bar a {
+    color: #00ff88;
+    text-decoration: none;
+}
+
+.footer_bar a:hover {
+    text-decoration: underline;
 }
 
 /* Dropdown Menu */
@@ -279,7 +345,6 @@ footer {
     color: black;
 }
 
-/* Tampilkan dropdown saat hover */
 .dropdown:hover .dropdown-content {
     display: block;
 }
